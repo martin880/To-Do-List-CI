@@ -184,6 +184,11 @@
 						
 						var i = "1";
 						$('#records').DataTable( {
+							// Solving the problem of DataTables warning: table id=records - Requested unknown parameter '0' for row 0, column 0.
+							columnDefs: [{
+								"defaultContent": "-",
+								"targets": "_all"
+							}],
 						"data": data.posts,
 						"responsive": true,
 						dom: 
@@ -204,9 +209,8 @@
 										<a href="#" value="${row.id}" id="edit" class="btn btn-sm btn-outline-success"><i class="fas fa-edit"></i></a>
 									`;
 									return a;
-								} 
-							}
-						]
+								}, 
+							}]
 					});
 
 					}else{
