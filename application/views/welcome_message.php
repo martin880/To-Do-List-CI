@@ -205,6 +205,8 @@
 								{ "data": "todo_name" },
 								{ "render": function ( data, type, row, meta) {
 									var a = `
+										<input id="checkbox1" type="checkbox" name="one" value="1"/>
+										
 										<a href="#" value="${row.id}" id="del" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
 										<a href="#" value="${row.id}" id="edit" class="btn btn-sm btn-outline-success"><i class="fas fa-edit"></i></a>
 									`;
@@ -344,6 +346,13 @@
 				});
 			}
 		});
+
+		$('#btnCheck').on('click', function() {
+			$('input')[0].checked = true;
+			});
+		$('#btnUnCheck').on('click', function() {
+			$('input')[0].checked = false;
+			});
 
    	</script>
   </body>
